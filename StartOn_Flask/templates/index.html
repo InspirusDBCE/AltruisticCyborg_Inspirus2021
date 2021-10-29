@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>A.G.R.O.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<script type="text/javascript" >// <![CDATA[ 
+				function loading(){
+					$("#loading").show();
+					$("#content").hide();       
+				}
+		// ]]></script>
+			
+		<style>
+		 body {
+			 background-image: url("{{ url_for('static', filename='img/Lotus.jpg') }}");
+			 background-color: #cccccc;
+			 height: 755px;
+			 background-position: center;
+			 background-repeat: no-repeat;
+			 background-size: cover;
+			 position: relative;
+					
+			}
+		   .center {
+			 display: flex;
+			 justify-content: center;
+			 align-items: center;}
+		   
+		   .center1 {
+			 display: flex;
+			 justify-content: center;
+			 align-items: center;
+		   }
+		   
+		   
+		</style>
+		</head>
+	<body class="is-preload">
+
+		
+		<!-- Signup Form -->
+				<h1 class="heading center"> </h1>
+				<h1 class="heading center"> </h1>
+				<a href="https://us04web.zoom.us/j/3118183783?pwd=8_pBGI6E3W4EuWv2bm9D05YcruT0A9Bi">
+				<button type="button" class="button2" style="background-color:rgb(0, 183, 255);margin-left:auto;margin-right:auto;display:block;margin-top:22%;margin-bottom:0%">
+					<span class="button__text">Join Meeting</span>
+					<span class="button__icon">
+						<ion-icon name="videocam-outline"></ion-icon>
+					</span>
+				  </button>
+				  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+				</a>
+				<form id="signup-form" method="post" action="/" enctype="multipart/form-data">
+					<h1 class="heading center1">Tap and Speak -></h1>
+					<button type="submit" class="btn btn-primary button_add" style="margin: 0 auto;display: block; border-radius: 12px;width:100px;"><i class="fa fa-microphone"></i></button>   				
+				</form>
+
+				<form method="GET" action="/" enctype="multipart/form-data">
+				</form>
+		<!-- Header -->
+			<header id="header">
+				<h2>HOPE</h2>
+				<p><br> An initiative to bring back the smile on the faces of<br /> each and every Indian Family.
+				A portal for online medical assistance.<br /> - Brought to you by A.G.R.O.</p>
+			</header>
+
+		
+
+
+		<!-- Scripts -->
+			<script type="text/javascript" href="{{ url_for('static', filename='main.js') }}"></script>
+
+	</body>
+</html>
