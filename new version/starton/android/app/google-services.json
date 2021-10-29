@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "313549037986",
+    "project_id": "starton-32706",
+    "storage_bucket": "starton-32706.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313549037986:android:3d18bcd24a0172063b12fb",
+        "android_client_info": {
+          "package_name": "com.example.starton"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313549037986-polb9mbjvs68qvoos6qfeukg0ttmrptk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJfODmnYJywCa94f4KSQMiXCU_3kiBuvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313549037986-polb9mbjvs68qvoos6qfeukg0ttmrptk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
