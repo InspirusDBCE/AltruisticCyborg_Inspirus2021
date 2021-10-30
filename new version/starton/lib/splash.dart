@@ -13,12 +13,11 @@ class splash extends StatelessWidget {
     return  EasySplashScreen(
       backgroundColor: Colors.amber,
       durationInSeconds:4,
-      navigator: home(),
+      navigator: rlogin(),
+      logoSize: 150.0,
 
-      logo: Image.asset('assets/StartOn-logos_black.png',
-        width:100,
-        height: 100,
-      ),
+      logo: Image.asset('assets/logo.png',),
+
     );
   }
 }

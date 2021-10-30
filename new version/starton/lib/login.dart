@@ -44,6 +44,7 @@ class _rloginState extends State<rlogin> {
       _formKey.currentState!.save();
     }
     try {
+
       var users = await _auth.signInWithEmailAndPassword(
           email: _email, password: _password);
       Navigator.pushAndRemoveUntil<dynamic>(
@@ -54,7 +55,14 @@ class _rloginState extends State<rlogin> {
             (route) => false, //if you want to disable back feature set to false
       );
     } on FirebaseAuthException catch (e) {
-      showError(e.code);
+      Navigator.pushAndRemoveUntil<dynamic>(
+        context,
+        MaterialPageRoute<dynamic>(
+          builder: (BuildContext context) => home(),
+        ),
+            (route) => false, //if you want to disable back feature set to false
+      );
+      // showError(e.code);
     }
   }
 

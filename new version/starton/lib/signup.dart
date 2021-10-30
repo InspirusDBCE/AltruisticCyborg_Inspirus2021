@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'Users.dart';
-
+import 'dart:math';
 // import 'package:meetup/photoup.dart';
 import 'login.dart';
 import 'package:page_transition/page_transition.dart';
@@ -50,7 +50,8 @@ class _signupState extends State<signup> {
       _contact = "",
       _name = "",
       _github = "",
-      _linked = "";
+      _linked = "",
+      _description = "";
   String s = "Interest";
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -73,8 +74,10 @@ class _signupState extends State<signup> {
   }
 
   void svae(UserCredential users) async {
+    Random random = new Random();
+    int randomNumber = random.nextInt(10);
     Userinfo us = Userinfo(users.user!.uid, _contact, _github, _linked,
-        'assets/image.png', _name, _myActivitiesResult);
+        'https://i.pravatar.cc/150?img='+randomNumber.toString(), _name, _myActivitiesResult, _description);
     //
     // Userinfo us = Userinfo(
     //     "12", "13", "swdss", "jdbhsb", 'assets/splash.png', "jsdnj", "dcfsdfs");
@@ -109,19 +112,19 @@ class _signupState extends State<signup> {
     }
   }
 
-  // void checkAuthetication() async {
-  //   _auth.authStateChanges().listen((user) {
-  //     if (user != null) {
-  //       Navigator.pushAndRemoveUntil<dynamic>(
-  //         context,
-  //         MaterialPageRoute<dynamic>(
-  //           builder: (BuildContext context) => home(),
-  //         ),
-  //         (route) => false, //if you want to disable back feature set to false
-  //       );
-  //     }
-  //   });
-  // }
+  void checkAuthetication() async {
+    _auth.authStateChanges().listen((user) {
+      if (user != null) {
+        Navigator.pushAndRemoveUntil<dynamic>(
+          context,
+          MaterialPageRoute<dynamic>(
+            builder: (BuildContext context) => home(),
+          ),
+          (route) => false, //if you want to disable back feature set to false
+        );
+      }
+    });
+  }
 
   // _saveForm() {
   //   var form = formKey.currentState!;
@@ -463,7 +466,7 @@ class _signupState extends State<signup> {
                       ),
                       onChanged: (input)=>{
                         setState(() {
-                          _password = input;
+                          _description = input;
                         })
                       },
                       // onSaved: (input) => _password = input!,

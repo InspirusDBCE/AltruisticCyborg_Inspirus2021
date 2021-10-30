@@ -8,9 +8,10 @@ class Userinfo {
   late String _linked;
   late String _name;
   late String _skills;
+  late String _description;
 
-  Userinfo(this._userid, this._contact,this._github,this._linked, this._photourl, this._name, this._skills);
-  Userinfo.withId(this._userid, this._contact,this._github,this._linked, this._photourl, this._name, this._skills);
+  Userinfo(this._userid, this._contact,this._github,this._linked, this._photourl, this._name, this._skills,  this._description);
+  Userinfo.withId(this._userid, this._contact,this._github,this._linked, this._photourl, this._name, this._skills,  this._description);
 
   String get userid => this._userid;
   String get photourl => this._photourl;
@@ -19,11 +20,14 @@ class Userinfo {
   String get contact => this._contact;
   String get github => this._github;
   String get linked => this._linked;
+  String get description => this._description;
 
   set userid(String userid) {
     this._userid = userid;
   }
-
+  set description(String description) {
+    this._description = description;
+  }
   set contact(String contact) {
     this._contact = contact;
   }
@@ -54,6 +58,7 @@ class Userinfo {
     this._skills = snapshot.value['skills'];
     this._github = snapshot.value['github'];
     this._linked= snapshot.value['linked'];
+    this._description= snapshot.value['description'];
   }
 
   Map<String, dynamic> toJson() {
@@ -65,6 +70,7 @@ class Userinfo {
       "skills":_skills,
       "github": _github,
       "linked":_linked,
+      "description":_description,
     };
   }
 }

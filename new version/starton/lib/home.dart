@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shifting_tabbar/shifting_tabbar.dart';
+import 'package:starton/discover.dart';
+import 'package:starton/news.dart';
 import 'package:starton/profile.dart';
+import 'chat.dart';
+import 'expert.dart';
 import 'issue.dart';
 
 class home extends StatefulWidget {
@@ -12,8 +16,15 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         backgroundColor: Colors.amber,
+        actions: [IconButton(onPressed:(){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => news()),
+          );
+        }, icon: Icon(Icons.new_releases_sharp),color: Colors.black,),],
         title: Text(
           'StartOn',
           style: TextStyle(color: Colors.black),
@@ -21,7 +32,7 @@ class _homeState extends State<home> {
         centerTitle: true,
       ),
       body: DefaultTabController(
-        length: 4,
+        length: 5,
         child: Scaffold(
           // Use ShiftingTabBar instead of appBar
           appBar: ShiftingTabBar(
@@ -46,18 +57,27 @@ class _homeState extends State<home> {
               ),
               ShiftingTab(
                 icon: const Icon(Icons.supervised_user_circle),
+
                 text: 'Profile',
               ),
+              ShiftingTab(
+                icon: const Icon(Icons.hail),
+                text: 'Expert',
+              ),
+
+
             ],
           ),
           // Other parts of the app are exacly same as default TabBar widget
           body: TabBarView(
             children: <Widget>[
-              Icon(Icons.directions_bike),
+              discover(),
               issue(),
 
-              Icon(Icons.directions_car),
+              chat(),
               profile(),
+              expert(),
+
             ],
           ),
         ),

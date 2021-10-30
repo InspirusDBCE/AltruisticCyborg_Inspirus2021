@@ -47,6 +47,7 @@ dependencies:
   url_launcher: ^6.0.12
   font_awesome_flutter: ^9.2.0
   horizontal_card_pager: ^1.1.1
+  webviewx: ^0.2.1
 
 dev_dependencies:
   flutter_test:
